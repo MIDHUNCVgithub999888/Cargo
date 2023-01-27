@@ -1,0 +1,109 @@
+{% extends 'AdminApp/base.html' %}
+{% load static  %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+{% block content %}
+<body>
+	<div>
+		<h4>ProductsDetails</h4>
+		<form action="{% url 'AdminApp:OrderDetails' %}" method="post" enctype="multipart/form-data">
+			{% csrf_token %}
+
+
+			
+
+
+			<table class="table table-bordered table-dark">
+
+				<thead style="background-color:black; color:#fff;">
+					<tr>
+						<th>TrackingId</th>
+						<th>Shippername</th>
+						<th>Origin</th>
+						<th>Destination</th>
+						<th>ProductType</th>
+						<th>ProductWeight</th>
+						<th>ProductQuantity</th>
+						<th>ProductCost</th>
+					    <th>ShipperAddress</th>
+						<th>ShipperPhone</th>
+						<th>ReciverName</th>
+						<th>ReciverAddress</th>
+						<th>ReciverContact</th> 
+						<th>Date</th>
+						<th>ShipmentType</th>
+						<th>ReciverCountry</th>
+						<th>ReciverState</th>
+						<th>ReciverDistrict</th>
+						<th>Status</th>
+				
+						<th>Action</th>
+
+
+
+					</tr>
+				</thead>
+				{% for i in user %}
+
+				<tbody>
+
+				<tr>
+					<td>{{i.id}}</td>
+					<td>{{i.Shippername}}</td>
+					<td>{{i.Origin}}</td>
+					<td>{{i.Destination}}</td>
+					<td>{{i.Type}}</td>
+					<td>{{i.CargoWeigth}}</td>
+					<td>{{i.CargoQuantity}}</td>
+					<td>{{i.NetRate}}</td>
+					<td>{{i.ShipperAddress}}</td>
+					<td>{{i.ContactNumber}}</td>
+					<td>{{i.Recivername}}</td>
+					<td>{{i.ReciverAddresss}}</td>
+					<td>{{i.ReciverContact}}</td>
+					<td>{{i.DeliveryDate}}</td>
+					<td>{{i.ShipmentType}}</td>
+					<td>{{i.ReciverCountry}}</td>
+					<td>{{i.ReciverState}}</td>
+					<td>{{i.ReciverDistrict}}</td>
+					<td>{{i.Status}}</td>
+					
+				
+					<td>
+						<input class="btn btn-success" type="button" name="submit" value="Approve" style="width:90px;">
+						<br/>
+						<br/>
+						<input class="btn btn-danger" type="button" name="submit" value="Delete" style="width:90px;">
+					</td>
+
+				</tr>
+				
+
+            
+            </tbody>
+
+            {% endfor %}
+
+			</table>
+
+
+		
+
+		</form>
+
+
+
+		
+		
+
+
+
+
+	</div>
+
+</body>
+{% endblock %}
+</html>

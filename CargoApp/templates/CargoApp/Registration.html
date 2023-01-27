@@ -1,0 +1,81 @@
+{% extends "CargoApp/base.html" %}
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title></title>
+	
+			
+	
+</head>
+<body>
+	{% block content %}
+	<div class="container-fluid" >
+		<br/>
+	
+	<div class="card" style="background-color:rgb(255, 255, 255); margin-bottom: 10px; margin-right: 50px; margin-left: 50px;">
+		<div class="model-content">
+			<div class="modal-header" style="background-color: rgb(35, 46, 24);">
+
+
+				<center>
+			
+		<h3 style="color: rgb(255, 255, 255) ;">User Registration</h3>
+		</center>
+				
+
+
+			</div>
+
+
+			
+			
+			
+		</div>
+
+
+			
+		
+
+		<form  action="{% url 'CargoApp:Register' %}" method="post" enctype="multipart/form-data" style="margin-left: 80px;" >
+			{% csrf_token %}
+
+
+			<!-- <tr>
+				<td></td>
+				<td>{{data.Firstname}}</td>
+				<td class="error">{{data.Firstname.errors}}</td>
+			</tr>
+			  -->
+				
+              
+				
+					
+                 
+
+					{{ data.as_p}}
+
+
+					
+				
+						<input style="margin-right: 200px;background-color: #e12503;" class="btn btn-danger"  type="submit" name="submit" value="Register">
+				
+				
+
+
+		</form>
+
+	
+
+
+     
+		
+	
+	</div>	
+	<br/>
+	</div>
+
+	
+{% endblock %}
+</body>
+</html>
